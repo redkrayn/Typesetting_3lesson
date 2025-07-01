@@ -7,11 +7,11 @@
 
 ## Запуск
 
--Python 3.7
+- Python 3.7
 
--Создание виртуального окружения.
+- Создание виртуального окружения.
 
--Установка зависимостей.
+- Установка зависимостей.
 
 ```sh
 pip install -r requirements.txt
@@ -25,6 +25,6 @@ python live_code.py
 ## Переменные окружения
 Создайте .env файл и напишите доступные переменные окружения(опционально):
 
--BOOTSTRAP_PATH - ваш путь к файлу bootstrap.min.css
+- BOOTSTRAP_PATH - ваш путь к файлу bootstrap.min.css
 
--BOOTSTRAP_JS_PATH - ваш путь к файлу bootstrap.bundle.min.js
+- BOOTSTRAP_JS_PATH - ваш путь к файлу bootstrap.bundle.min.js
