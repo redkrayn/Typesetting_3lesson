@@ -26,4 +26,5 @@ python live_code.py
 Создайте .env файл и напишите доступные переменные окружения(опционально):
 
 BOOTSTRAP_PATH - ваш путь к файлу bootstrap.min.css
+
 BOOTSTRAP_JS_PATH - ваш путь к файлу bootstrap.bundle.min.js
