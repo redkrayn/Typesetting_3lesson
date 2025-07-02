@@ -58,7 +58,7 @@
               <div class="card h-100">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="{{ book.img_src }}" class="img-fluid rounded-start" alt="Обложка книги {{ book.title }}">
+                    <img src="{{ book.img_src|urlencode }}" class="img-fluid rounded-start" alt="Обложка книги {{ book.title }}">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
