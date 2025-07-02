@@ -12,7 +12,7 @@ TEMPLATE_PATH = "template.html"
 META_DATA_PATH = "media/meta_data.json"
 BOOTSTRAP_PATH = "../static/bootstrap.min.css"
 BOOTSTRAP_JS_PATH = "../static/bootstrap.bundle.min.js"
-SERVER_PORT = 5507
+SERVER_PORT = 5500
 AMOUNT_PAGE = 20
 
 
@@ -23,17 +23,17 @@ def load_books():
     data_dir = os.path.dirname(os.path.abspath(META_DATA_PATH))
 
     for book in books:
-        if 'img_src' in book:
+        if "img_src" in book:
             img_path = os.path.normpath(os.path.join(data_dir, book["img_src"]))
             rel_img_path = os.path.relpath(img_path, "pages")
             book["img_src"] = rel_img_path.replace(os.sep, "/")
 
-        if 'book_path' in book:
+        if "book_path" in book:
             book_path = os.path.normpath(os.path.join(data_dir, book["book_path"]))
             rel_book_path = os.path.relpath(book_path, "pages")
             parts = rel_book_path.split(os.sep)
             parse_parts = [urllib.parse.quote(part) for part in parts]
-            book['book_path'] = '/'.join(parse_parts)
+            book["book_path"] = "/".join(parse_parts)
     return books
 
 
@@ -55,7 +55,6 @@ def create_pages(books, template, bootstrap_path, bootstrap_js_path, page_size=A
             bootstrap_path=bootstrap_path,
             bootstrap_js_path=bootstrap_js_path
         )
-        print(bootstrap_path)
         page_filename = f"pages/index{index}.html"
         with open(page_filename, "w", encoding="utf-8") as file:
             file.write(rendered_html)
@@ -74,8 +73,8 @@ def refresh(bootstrap_path, bootstrap_js_path):
 
 def main():
     load_dotenv()
-    bootstrap_path = os.getenv('BOOTSTRAP_PATH', BOOTSTRAP_PATH)
-    bootstrap_js_path = os.getenv('BOOTSTRAP_JS_PATH', BOOTSTRAP_JS_PATH)
+    bootstrap_path = os.getenv("BOOTSTRAP_PATH", BOOTSTRAP_PATH)
+    bootstrap_js_path = os.getenv("BOOTSTRAP_JS_PATH", BOOTSTRAP_JS_PATH)
     render_website(bootstrap_path, bootstrap_js_path)
 
     reload_handler = functools.partial(refresh, bootstrap_path, bootstrap_js_path)
@@ -83,7 +82,7 @@ def main():
     server = Server()
     server.watch(TEMPLATE_PATH, reload_handler)
     server.watch(META_DATA_PATH, reload_handler)
-    server.serve(root='.', port=SERVER_PORT)
+    server.serve(root=".", port=SERVER_PORT)
 
 
 if __name__ == "__main__":

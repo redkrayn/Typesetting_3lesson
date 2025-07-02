@@ -21,9 +21,19 @@ pip install -r requirements.txt
 python live_code.py
 ```
 
+-Переходим по ссылке: [Онлайн библиотека](http://localhost:5500)
+
 ## Переменные окружения
 Создайте .env файл и напишите доступные переменные окружения(опционально):
 
 - BOOTSTRAP_PATH - ваш путь к файлу bootstrap.min.css
 
 - BOOTSTRAP_JS_PATH - ваш путь к файлу bootstrap.bundle.min.js
+
+##Запуск в оффлайн режиме
+Для запуска в офлайн режиме проверьте наличие файлов в папке static:
+
+- bootstrap.bundle.min.js
+- bootstrap.min.css
+
+В корневой папке откройте pages и откройте файл index1, чтобы увидеть книги. 

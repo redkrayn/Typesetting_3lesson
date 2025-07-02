@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Целюлоза</title>
-    <link rel="icon" type="image/x-icon" href="../static/favicon.png">
-    <link href="{{ bootstrap_path }}" rel="stylesheet">
-    <script src="{{ bootstrap_js_path }}" defer></script>
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Целюлоза</title>
+      <link rel="icon" type="image/x-icon" href="../static/favicon.png">
+      <link href="{{ bootstrap_path }}" rel="stylesheet">
+      <script src="{{ bootstrap_js_path }}" defer></script>
+  </head>
   <body>
     <div class="container">
       <h1 class="my-4">Книжная лавка</h1>
@@ -66,7 +66,7 @@
                       <p class="card-text">Автор: {{ book.author }}</p>
                       {% if book.genres %}
                         <p class="card-text">
-                          {% for genre in book.genres.split(',') %}
+                          {% for genre in book.genres.split(",") %}
                             <span class="badge bg-secondary me-1">{{ genre.strip() }}</span>
                           {% endfor %}
                         </p>
